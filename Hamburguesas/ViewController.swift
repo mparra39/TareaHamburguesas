@@ -14,6 +14,14 @@ class ViewController: UIViewController {
     //https://github.com/mparra39/Hamburguesas.git
     //57632cb3944956a8e9ea98d8cc0cc762e4de0f32
     
+    let pais = ColeccionDePaises()
+    let hamburguesa = ColeccionDeHamburguesa()
+    //Colores
+    let colores = Colores()
+    
+    @IBOutlet weak var etiquetaPais: UILabel!
+    @IBOutlet weak var etiquetaHamburguesa: UILabel!
+    
     //Prueba
 
     override func viewDidLoad() {
@@ -26,6 +34,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func tengoHambre() {
+        
+        etiquetaPais.text = pais.obtenPais()
+        etiquetaHamburguesa.text = hamburguesa.obtenHamburguesa()
+        
+        //Cambiar el color del background
+        let colorAleatorio = colores.regresaColorAleatorio()
+        view.backgroundColor = colorAleatorio
+        view.tintColor = colorAleatorio
+    }
 
 }
 
